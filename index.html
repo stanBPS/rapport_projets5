@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <!--prism CSS-->
+    <link  type="text/css" href="css/prism.css" rel="stylesheet" /> 
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=PT+Sans&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="#!" class="brand-logo">RAPPORT PROJET</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#analyse">Analyse et Conception</a></li>
+                            <li><a href="#realisation">Réalisation</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#analyse">Analyse et Conception</a></li>
+            <li><a href="#realisation">Réalisation</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </header>
+
+    <section id="" class="section container scrollspy">
+        <h1>Licence Informatique <br>Projet S5</h1> 
+        <h3>Tableau de bord pour la visualisation <br>
+            des données de consommation énergétique</h3>
+
+    </section>
+    <<!--img style="display: block; margin: auto;" src="contenu/images/2.png"  class="responsive-img">-->
+
+
+    <section id="introduction" class="section container scrollspy">
+        <h1>Introduction</h1>
+        <h4>Projet</h4>
+        <h5>Contexte</h5>
+        <p>Le projet dont nous somme en charge consiste à mettre en place un tableau de bord pour la visualisation de des données de consommation energetique.
+            Ce projet est un sujet concret de neOCampus dans le but de remplir certain objectifs:
+            <ul class="browser-default">
+                <li>Améliorer le confort au quotidien pour la communauté universitaire</li>
+                <li>Concevoir des produits et services associés aux systèmes ambiants</li>
+            </ul>
+            <h5>Tableau de bord</h5>
+            <ul class="browser-default">
+                <li>Réception des données des capteurs via sockets</li>
+                <li>Enregistrement des données dans une base de données</li>
+                <li>
+                    <p>Interface graphique composée de 3 principaux panneaux :</p>
+                    <ul class="browser-default">
+                        <li>
+                            <p>Visualisation « temps réel »</p>
+                            <ul class="browser-default">
+                                <li>Sous forme de tableau</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Analyse a posterior</p>
+                            <ul class="browser-default">
+                                <li>Sous forme de graphique</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Gestion des capteurs</p>
+                            <ul class="browser-default">
+                                <li>A l’aide d’un arbre</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <h5>Presentation du projet</h5>
+        <h6>Vue d'ensemble</h6>
+        <p>
+            Le projet neOCampus (<a href="https://www.irit.fr/neocampus/" target="_blank">https://www.irit.fr/neocampus/</a>) est un projet de l’Université Paul Sabatier qui vise notamment à contrôler les consommations énergétiques du campus. 
+            L’ensemble des fluides consommés sur le campus est mesuré au travers de compteurs et de capteurs localisés sur le campus. Ces fluides sont la consommation d’eau, 
+            d’air comprimé, d’électricité. Chaque compteur ou capteur envoie régulièrement sa valeur courante. Afin d’analyser et contrôler les consommations énergétiques du campus, 
+            il est donc nécessaire de recueillir ces données et permettre au moyen d’une interface de visualisation d’afficher ces différentes valeurs
+        </p>
+        <h6>Objectifs du projets</h6>
+        <p>
+            L’objectif de ce projet est donc de réaliser une interface de visualisation des données de consommation énergétique du campus. 
+            La visualisation de ces données pourra se faire de deux manières :
+            <ol class="browser-default">
+                <li>
+                    <p>
+                        Une visualisation « temps réel » : dans ce cas, l’interface de visualisation affichera la dernière valeur pour chaque capteur connecté.
+                         De plus, afin de surveiller les potentiels problèmes de consommation (fuite d’eau, radiateur défaillant, etc.) la valeur sera mise en évidence si elle dépasse les seuils autorisés pour ce capteur
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Une visualisation « a posteriori » : dans ce cas, l’interface de visualisation pourra afficher et comparer des données de consommation de 1 à 3 capteurs
+                         en même temps sur une période déterminée.
+                    </p>
+                </li>
+            </ol>
+            Enfin, chaque capteur a des seuils minimum et maximum à ne pas dépasser. Si la valeur en
+            cours d’un capteur dépasse ces bornes, l’interface devra alerter l’utilisateur en mettant en
+            évidence le capteur en question (cf. interface de visualisation « temps réel »). 
+        </p>
+        <h5>Cahier des charges</h5>
+        <h6>Protocole de communication</h6>
+        <p>
+            Pour ce projet, les capteurs seront simulés par une interface de simulation que nous vous
+            fournissons. La communication entre cette interface de simulation et votre interface de
+            visualisation se fera au moyen de sockets. Votre application servira de serveur pour la réception
+            des données envoyées par le simulateur. Au lancement de votre application, une boîte de
+            dialogue devra demander à l’utilisateur sur quel port l’application doit se connecter. Une valeur
+            par défaut devra être proposée à l’utilisateur.
+        </p>
+        <p>
+            L’interface de simulation peut gérer la simulation de plusieurs capteurs en même temps, en
+            envoyant des messages indépendants pour chaque capteur. Un capteur peut envoyer trois
+            types de message lors de la connexion ou de la déconnexion et lors de la mise à jour de la
+            valeur courante du capteur
+        </p>
+        <p>
+            <em>Message pour la connexion d’un capteur</em>
+            <p>Ce message sera au format suivant : <span class="red-text"><b>Connexion</b> nom_du_capteur description_du_capteur</span></p>
+            <p>Avec description_du_capteur au format suivant : <span class="red-text">type:batiment:etage:lieu</span> et :</p>
+            <ul class="browser-default">
+                <li><b>type</b> est le type de fluide géré par le capteur en question (les valeurs possibles pour le
+                    type sont EAU, ELECTRICITE, AIRCOMPRIME, TEMPERATURE) ;
+                    </li>
+                <li><b>batiment</b> est une chaîne de caractères qui donne le nom du bâtiment dans lequel se
+                    trouve le capteur ;</li>
+                <li><b>etage</b> est un entier pour indiquer à quel étage se situe le capteur (0 pour le rez-dechaussée) ;</li>
+                <li><b>lieu</b> est une chaîne de caractères pour décrire plus précisément l’endroit où se situe le
+                    capteur à l’étage.</li>
+            </ul>
+            <b>Exemple de message</b>
+            <p>Connexion Capteur1_03 ELECTRICITE:U1:1:DevantSalle202</p>
+        </p>
+        <p>
+            <em>Message pour l’envoi de la valeur d’un capteur</em>
+            <p>Ce message sera au format suivant : <span class="red-text">Donnee nom_du_capteur valeur_du_capteur</span></p>
+            <p>Où valeur_du_capteur est une valeur sous la forme d’un réel.</p>
+            <b>Exemple de message</b>
+            <p>Donnee Capteur1_03 3.33652</p>
+        </p>
+        <p>
+            <em>Message pour la déconnexion d’un capteur</em>
+            <p>Ce message sera au format suivant : <span class="red-text">Deconnexion nom_du_capteur</span></p>
+            <b>Exemple de message</b>
+            <p>Deconnexion Capteur1_03</p>
+        </p>
+        <h6>Stockage de données</h6>
+        <p>
+            Une fois connectée, votre application devra réceptionner toutes les informations émanant des
+            capteurs. En plus d’offrir des outils de visualisation, votre application devra enregistrer
+            l’ensemble de ces données dans une base de données. Celle-ci permettra notamment de
+            pouvoir réaliser des analyses a posteriori sur les données recueillies. 
+        </p>
+        <h6>Interface Graphique</h6>
+        <p>
+            Votre application devra contenir 3 grandes « panneaux » : un pour afficher la valeur des
+            capteurs en « temps réel », un autre pour analyser les données a posteriori, et enfin un
+            troisième pour gérer la liste des capteurs.
+            <p>
+                <em>Panneau de visualisation « temps réel »</em>
+                <p>L’ensemble de ces données sera affiché sur l’interface sous la forme d’un tableau où chaque
+                ligne du tableau correspondra à un capteur connecté, reprenant son nom, le type de fluide, sa
+                localisation et sa valeur. L’utilisateur pourra filtrer les données temps réel soit en fonction du
+                type de fluide, soit en fonction du bâtiment dans lequel se trouvent les capteurs. </p>
+            </p>
+            <p>
+                <em>Panneau d’analyse a posteriori</em>
+                <p>
+                    Ce panneau proposera une visualisation des données a posteriori : la visualisation des données
+                    se fera sous la forme de courbes où le temps sera représenté sur l’axe des abscisses et les
+                    valeurs du capteur seront affichées en ordonnée. Il sera possible d’afficher les courbes de 1 à
+                    3 capteurs en simultanées. 
+                </p>
+            </p>
+            <p>
+                <em>Panneau de gestion des capteurs</em>
+                <p>
+                    Ce dernier panneau servira à afficher tous les capteurs ayant été connectés au moins une fois
+                    à votre application. L’ensemble des capteurs sera représenté sur la gauche de votre panneau
+                    sous la forme d’un arbre à 3 niveaux : bâtiment, étage et nom du capteur.<br>
+                    Lors de la sélection d’un capteur dans l’arbre, les informations relatives à ce capteur seront
+                    affichées sur la droite du panneau. Les informations à afficher sont le nom du capteur, le type
+                    de fluide, les informations sur la localisation du capteur, et la valeur de ses seuils. 
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fluide</th>
+                            <th>Unité</th>
+                            <th>Seuil min</th>
+                            <th>Seuil max</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EAU</td>
+                            <td>m^3</td>
+                            <td>0 </td>
+                            <td>10 </td>
+                        </tr>
+                        <tr>
+                            <td>ELECTRICITE </td>
+                            <td>kWh</td>
+                            <td>10 </td>
+                            <td>500 </td>
+                        </tr>
+                        <tr>
+                            <td>TEMPERATURE </td>
+                            <td>°C</td>
+                            <td>17 </td>
+                            <td>22 </td>
+                        </tr>
+                        <tr>
+                            <td>AIR COMPRIME </td>
+                            <td>m^3/h</td>
+                            <td>0 </td>
+                            <td>5 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+        </p>
+    </section>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="contenu/images/bck1.jpg" alt="Photo de Karolina Grabowska provenant de Pexels" class="responsive-img">
+        </div>
+    </div>
+
+    <section id="analyse" class="section container scrollspy">
+       <h1>Analyse et Conception</h1>
+       <h5>Travail réalisé</h5>
+       <p>
+           Ce projet projet nous a permit de mettre en pratique les enseignements du semestre:
+           <ul class="browser-default">
+               <li>POO (JAVA/SWING)</li>
+               <li>Réseau</li>
+               <li>Base de données</li>
+           </ul>
+           Et nous a permit d'approffondir nos connaisance personnelle en utilisant une API Java pour le réseau et les bases de données JDBC ou encore la création de graphique avec JFreeChart.
+           <br>Avec ce projet on a du organiser notre temps, en fonction d'un cahier des charges précis. Pour la mise en place en place du projet on a travaillé ensemble puis un partage des tâche équitable 
+           pour la partie implémentation.
+       </p>
+       <h5>Base de données</h5>
+       <h6>MLD</h6>
+       <p>Aprés plusieurs test nous avons validé le MLD suivant: </p>
+       <p>
+            Capteur (NomC, NomB, Etage, #TypeC, Lieu, seuilMin, seuilMax, active)<br>
+            Valeur (IDValeur, #NomC, Valeur, Date)<br>
+            type (TypeC, seuilMin, seuilMax, Unite)<br>       
+       </p>
+       <h6>
+        <img src="contenu/images/bdd.png"  class="responsive-img">
+       </h6>
+       <h5>JAVA</h5>
+       <h6>UML de classe importante</h6>
+       <img src="contenu/images/test1.png"  class="responsive-img">
+       <h6>L'organisation du projet </h6>
+       <div class="row">
+           <div class="col s7 push-s5">
+            <p>
+                <ul>
+                    <li><p><b>app</b>: Concerne les JPanel/JFrame générale du projet</p> </li>
+                    <li><p><b>capteur</b>: La classe capteur</p></li>
+                    <li><p><b>content</b>: Concerne le contenue que l'on retrouve dans la JFrame general(Live,Charte,..)</p></li>
+                    <li><p><b>Database</b>: La classe permettant la connexion à la base de données et des méthodes utile au projet</p></li>
+                    <li><p><b>server</b>: La classe pour la création du server et la récupération des données des différents capteur</p></li>
+                    <li><p><b>images</b>: Dossier contenant les images du projets</p></li>
+                    <li><p><b>lib</b>: Les lib ajouté pour le projet</p></li>
+                    <li><p><b>conf.properties</b>: Les données necessaire pour la connexion a la base de données</p></li>
+                </ul>
+            </p>
+           </div>
+           <div class="col s5 pull-s7">
+                <img src="contenu/images/structure.png" width="150px" class="responsive-img materialboxed">
+           </div>
+       </div>
+    </section>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="contenu/images/bck1.jpg" alt="Photo de Karolina Grabowska provenant de Pexels" class="responsive-img">
+        </div>
+    </div>
+
+    <section id="realisation" class="section container scrollspy">
+        <h1>Réalisation</h1>
+        <h4> Outils et Langage</h4>
+        <h6>Langages</h6>
+        <p>Pour le langage de programmation on utilise <a href="https://fr.wikipedia.org/wiki/Java_(langage)" target="_blank">JAVA</a> comme demandé dans le cahier des charges et du <a href="https://fr.wikipedia.org/wiki/Structured_Query_Language" target="_blank">SQL</a> pour la parie communication 
+            avec la base de données à l'aide d'une des nombreuses bibliothèque disponible pour JAVA </p>
+           
+        <h6>Platforme de développement</h6>
+        <p>On utilise <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a>  </p>
+        
+        <h6>Bibliothèque JAVA graphique</h6>
+            <p>Pour la réalisation de l'interface nous utilisons on majorité <a href="https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html" target="_blank">SWING</a> pour mettre en pratique nos cours durant ce semestre</p>
+            <p>Pour la realistaion de la partie graphique de linterface on utilise <a href="https://www.jfree.org/jfreechart/" target="_blank">JFreeChart</a></p>
+        <h6>Bibliothèque JAVA base de données</h6>
+            <p>Pour la connexion à une base de données en utilise la version mysql de <a href="https://dev.mysql.com/downloads/connector/j/" target="_blank">JDBC</a></p>
+        <h6>Logiciel pour réalisation de la maquette</h6>
+            <p>Pour avoir une idée de l'interface avant implémentation on a utilisés <a href="https://www.invisionapp.com/studio" target="_blank">InVision</a></p>
+        <h6>Logiciel gestion de la base de données</h6>
+            <p>Pour la création et la gestion de la base de données en local on utilise l'nvironnement <a href="https://www.wampserver.com/" target="_blank">WampServer</a> et on utilise le serveur phpmyadmin pour l'administration de BDD</p>
+
+        <div class="row">
+            <div class="col s3">
+                <img src="contenu/images/java.jpg" width="150px" class="responsive-img ">
+            </div>
+            <div class="col s3">
+                <img  src="contenu/images/eclipse.png" width="100px" class="responsive-img ">
+            </div>
+            <div class="col s3">
+                <img  src="contenu/images/invision.png" width="100px" class="responsive-img ">
+            </div>
+            <div class="col s3">
+                <img style="margin-top: 15px;" src="contenu/images/WampServer-logo.png" width="150px " class="responsive-img ">
+            </div>
+
+        </div>  
+        
+        <h4>Maquette de l'interface</h4>
+        <div class="row">
+            <div class="col s6">
+                <img src="contenu/images/page1bis.png"  class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/page1.png"  class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/page2.png" class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/page3.png"  class="responsive-img materialboxed">
+            </div>
+        </div>  
+        
+        <h4>Implémentation base de données</h4>
+        Création de la base de données <a href="/contenu/download/bdd_projets5.sql" download>bdd_projets5.sql</a>
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">Show code</div>
+                <div class="collapsible-body">
+<pre><code class="language-sql">-- Nom de la Base de données : `bdd_projets5`
+DROP TABLE IF EXISTS `capteur`;
+CREATE TABLE IF NOT EXISTS `capteur` (
+    `NomC` varchar(20) NOT NULL,
+    `NomB` varchar(10) NOT NULL,
+    `Etage` int(11) NOT NULL,
+    `TypeC` varchar(20) NOT NULL,
+    `Lieu` varchar(50) NOT NULL,
+    `seuilMin` float NOT NULL,
+    `seuilMax` float NOT NULL,
+    `active` tinyint(1) NOT NULL,
+    PRIMARY KEY (`NomC`),
+    KEY `fk_typeC` (`TypeC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `capteur` (`NomC`, `NomB`, `Etage`, `TypeC`, `Lieu`, `seuilMin`, `seuilMax`, `active`) VALUES
+('capteur4', 'U1', 1, 'EAU', 'Couloir', 0, 10, 0);
+
+DROP TABLE IF EXISTS `type`;
+CREATE TABLE IF NOT EXISTS `type` (
+    `TypeC` varchar(20) NOT NULL,
+    `SeuilMin` float NOT NULL,
+    `SeuilMax` float NOT NULL,
+    `unite` varchar(5) NOT NULL,
+    PRIMARY KEY (`TypeC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `type` (`TypeC`, `SeuilMin`, `SeuilMax`, `unite`) VALUES
+('AIRCOMPRIME', 0, 5, 'm^3/h'),
+('EAU', 0, 10, 'm^3'),
+('ELECTRICITE', 10, 500, 'kWh'),
+('TEMPERATURE', 17, 22, '°C');
+
+DROP TABLE IF EXISTS `valeur`;
+CREATE TABLE IF NOT EXISTS `valeur` (
+    `IDValeur` int(11) NOT NULL AUTO_INCREMENT,
+    `NomC` varchar(20) NOT NULL,
+    `Valeur` float NOT NULL,
+    `Date` datetime NOT NULL,
+    PRIMARY KEY (`IDValeur`),
+    KEY `fk_nomc` (`NomC`)
+) ENGINE=InnoDB AUTO_INCREMENT=638 DEFAULT CHARSET=utf8;
+
+ALTER TABLE `capteur`
+    ADD CONSTRAINT `fk_typeC` FOREIGN KEY (`TypeC`) REFERENCES `type` (`TypeC`);
+
+ALTER TABLE `valeur`
+    ADD CONSTRAINT `fk_nomc` FOREIGN KEY (`NomC`) REFERENCES `capteur` (`NomC`);
+COMMIT;</code></pre>
+                </div>
+            </li> 
+        </ul>
+
+        <h4>Interface</h4>
+            
+        <div >
+            <div class="row">
+                <div class="col s6">
+                    <img src="contenu/images/1.png"  class="responsive-img materialboxed">
+                </div>
+                <div class="col s6">
+                    <img src="contenu/images/live.png"  class="responsive-img materialboxed">
+                </div>
+            </div>
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">Show code</div>
+<div class="collapsible-body"> 
+    <pre><code class="language-java">public class NavBar extends JPanel{
+        private static final long serialVersionUID = 1L;
+        static Button live_button;
+        static Button posteriori_button;
+        static Button gestion_button;
+        NavBar(){            
+            this.setBackground(new Color(0xC8C8C8));
+            //Menu
+            ImageIcon image_navbar = new ImageIcon("images/UPS.png");         
+            //changer taille de l'image
+            Image newImage = image_navbar.getImage().getScaledInstance(256, -1, Image.SCALE_SMOOTH);
+            image_navbar = new ImageIcon(newImage);
+                    
+            JLabel container_image_navbar = new JLabel();
+            container_image_navbar.setIcon(image_navbar);    
+                    
+            /*-----------------BUTTON MENU------------------*/         
+            live_button = new Button("VISUALISATION TEMPS RÉEL","images/sensor.png");
+                    
+            posteriori_button = new Button("ANALYSE A POSTERIORI","images/stats.png");
+                    
+            gestion_button = new Button("GESTION DES CAPTEURS","images/tree-structure.png");
+            
+            live_button.setBackground(new Color(0xF3F3F3));
+            Box col=new Box(BoxLayout.Y_AXIS);
+            Box line1=new Box(BoxLayout.X_AXIS);
+            line1.add(container_image_navbar);
+            col.add(line1);
+            col.add(Box.createVerticalGlue());
+            col.add(live_button);
+            col.add(Box.createRigidArea(new Dimension(0, 5)));
+            col.add(posteriori_button);
+            col.add(Box.createRigidArea(new Dimension(0, 5)));
+            col.add(gestion_button);
+            col.add(Box.createVerticalGlue());
+            this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+            this.add(col);
+        }
+    }</code></pre>    
+                    </div>      
+                </li>
+            </ul>
+
+            
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <img src="contenu/images/1.png"  class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/live.png"  class="responsive-img materialboxed">
+            </div>
+        </div>  
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">Show code</div>
+                <div class="collapsible-body">  
+<pre><code class="language-java">public class Live extends JPanel{
+    private static final long serialVersionUID = 1L;
+
+    public Live(){
+        this.setBackground(Color.WHITE);
+        this.setLayout(new BorderLayout());
+        
+        JPanel header =new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel titre =new JLabel("VISUALISATION TEMPS RÉEL");
+        titre.setFont(new Font("Serif", Font.BOLD,26));
+        titre.setForeground(new Color(0x09105A));
+        
+        header.setBackground(new Color(0xC1C1C1));
+        header.add(titre);
+        this.add(header,BorderLayout.PAGE_START);
+        this.add(new Table(),BorderLayout.CENTER);  
+    }
+}</code></pre>
+                </div>      
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col s6">
+                <img src="contenu/images/2.png"  class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/2.png"  class="responsive-img materialboxed">
+            </div>
+        </div> 
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">Show code</div>
+                <div class="collapsible-body"> 
+<pre><code class="language-java">public class Chart extends JPanel{
+    private static final long serialVersionUID = 1L;
+    public Chart(){
+        this.setBackground(Color.WHITE);
+        this.setLayout(new BorderLayout());
+        
+        JPanel header =new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel titre =new JLabel("ANALYSE A POSTERIORI");
+        titre.setFont(new Font("Serif", Font.BOLD,26));
+        titre.setForeground(new Color(0x09105A));
+        
+        header.setBackground(new Color(0xC1C1C1));
+        header.add(titre);
+        this.add(header,BorderLayout.PAGE_START);
+        this.add(new Graph(),BorderLayout.CENTER);
+    }
+}</code></pre>    
+                </div>      
+            </li>
+        </ul>
+        
+
+        <div class="row">
+            <div class="col s6">
+                <img src="contenu/images/3.png" width="500px" class="responsive-img materialboxed">
+            </div>
+            <div class="col s6">
+                <img  src="contenu/images/gestion1.png"  class="responsive-img materialboxed">
+            </div>
+        </div> 
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">Show code</div>
+                <div class="collapsible-body"> 
+<pre><code class="language-java">public class Tree extends JPanel{
+    private static final long serialVersionUID = 1L;
+
+    public Tree(){
+        this.setBackground(Color.WHITE);
+        this.setLayout(new BorderLayout());
+        
+        JPanel header =new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel titre =new JLabel("GESTION DES CAPTEURS");
+        titre.setFont(new Font("Serif", Font.BOLD,26));
+        titre.setForeground(new Color(0x09105A));
+        
+        header.setBackground(new Color(0xC1C1C1));
+        header.add(titre);
+        this.add(header,BorderLayout.PAGE_START);
+        this.add(new Gestion(),BorderLayout.CENTER);
+    }
+}</code></pre>    
+                </div>      
+            </li>
+        </ul>
+
+
+    <h4>Implémentation</h4>
+    <h6>Classe capteur</h6>
+    <p>On a créé une classe Capteur de maniere a facilité la récupération des données depuis la BDD, le Serveur et l'affichage par la suite dans la JTable() grace à AbstractTableModel</p>
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">Show code</div>
+            <div class="collapsible-body">  
+<pre><code class="language-java">public class Capteur {
+    private String nom;
+    private String type;
+    private String batiment;
+    private String etage;
+    private String lieu;
+    private float min;
+    private float max;
+    private boolean active;
+    private List<Float> list;
+
+    public Capteur(String nom, String type, String batiment, String etage, String lieu, boolean active) {
+        this.nom = nom;
+        this.type = type;
+        this.batiment = batiment;
+        this.etage = etage;
+        this.lieu = lieu;
+        this.active = active;
+        this.list = new ArrayList<>();
+        switch (this.type) {
+        case "EAU":
+            this.min = 0;
+            this.max = 10;
+            break;
+        case "ELECTRICITE":
+            this.min = 10;
+            this.max = 500;
+            break;
+        case "AIRCOMPRIME":
+            this.min = 0;
+            this.max = 5;
+            break;
+        case "TEMPERATURE":
+            this.min = 17;
+            this.max = 22;
+            break;
+        default:
+            this.min = 0;
+            this.max = 0;
+        }
+    }
+
+    public List<Float> getList() {
+        return list;
+    }
+
+    public void addValue(float v) {
+        list.add(v);
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getBatiment() {
+        return batiment;
+    }
+
+    public String getEtage() {
+        return etage;
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof Capteur) {
+            Capteur capteur = (Capteur) obj;
+            return nom.equals(capteur.getNom());
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return nom;
+    }
+
+    public float getMin() {
+        return min;
+    }
+
+    public void setMin(float min) {
+        this.min = min;
+    }
+
+    public float getMax() {
+        return max;
+    }
+
+    public void setMax(float max) {
+        this.max = max;
+    }
+
+    public boolean isRed() {
+        if (list.size() > 0) {
+            if (list.get(list.size() - 1) < this.min || list.get(list.size() - 1) > this.max) {
+                return true;
+            }
+        }
+        return false;
+    }
+}</code></pre>
+            </div>      
+        </li>
+    </ul>
+
+    <h5>Affichage des capteur live</h5>
+    <p>On nous a fournis un fichier <a href="" download="">capteur.jar</a> pour simuler la reception des données d'un capteur via un serveur, à l'aide de la classe Capteur en
+    on crée une liste de capteur qui nous permettra par la suite de les affcher dans la JTable() et avec la fonction fireTableDataChanged() on met à jour la table à chaque nouvelle valeur reçu</p>
+    <p>Aprés création d'un nouveau serveur on utilise cette méthode pour récuperer les données.</p>
+    <img  src="contenu/images/jtable.png"  class="responsive-img materialboxed">
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">Show code</div>
+            <div class="collapsible-body">  
+<pre><code class="language-java">public void handleInput(String input) {
+    if (input.contains("Connexion")) {
+        String[] parts = input.split(" ", 3);
+        String[] description = parts[2].split(":");
+        Capteur c= new Capteur(parts[1],description[0],description[1],description[2],description[3],true);
+        if(!capteurs.containsKey(parts[1])) {
+            capteurs.put(parts[1], c);
+            d.addToTableCapteur(parts[1], description[0],description[1], description[2], description[3],c.getMin(),c.getMax(),true);
+            DefaultTreeModel model = (DefaultTreeModel)Gestion.tree.getModel();
+            DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+            d.miseAJourTree(root);
+            model.reload(root);
+        }
+        else {
+            capteurs.get(parts[1]).setActive(true);
+            d.changeActive(parts[1], true);
+        }
+    }
+    if (input.contains("Donnee")) {
+        String[] parts = input.split(" ");	
+        sqlDate = new java.sql.Timestamp(new java.util.Date().getTime());
+        d.addToTableValeur(parts[1], Float.parseFloat(parts[2]), sqlDate);
+        capteurs.get(parts[1]).addValue(Float.parseFloat(parts[2]));
+    }
+    if (input.contains("Deconnexion")) {
+        String[] parts = input.split(" ");
+        capteurs.get(parts[1]).setActive(false);
+        d.changeActive(parts[1], false);
+    }
+    cloneCapteurs.clear();
+    for (Entry<String, Capteur> entry : capteurs.entrySet()) {
+        if (entry.getValue().isActive()) {
+            cloneCapteurs.put(entry.getKey(), entry.getValue());
+        }
+    }
+    
+    Table.modele.filter(Table.filtre_fluide.getSelectedItem(),Table.filtre_batiment.getSelectedItem());
+    Table.modele.fireTableDataChanged();
+}</code></pre>  
+            </div>      
+        </li>
+    </ul>
+
+    <h5>Affichage des graphiques</h5>
+    <p>A l'aide des données recuperées dans la BDD on a la possibilités d'affchicher 3 graphique (max) de capteur en fonction d'une date de debut et de fin</p>
+    <img  src="contenu/images/Jfreechart.png"  class="responsive-img materialboxed">
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">Show code</div>
+            <div class="collapsible-body"> 
+<pre><code class="language-java">public class Graph extends JPanel{
+    private static final long serialVersionUID = 1L;
+    Database d = new Database();
+    static String query="";
+    static XYSeriesCollection dataset = new XYSeriesCollection();
+    static JFreeChart chart=ChartFactory.createXYLineChart("","Date", "Value",dataset,PlotOrientation.VERTICAL, true, true, false);
+    static ChartPanel chartPanel = new ChartPanel(chart);
+    static int nb=0;
+    
+    public Graph() {
+        this.setBackground(Color.WHITE);
+        this.setLayout(new BorderLayout());
+        
+        JPanel header =new JPanel(new FlowLayout(FlowLayout.CENTER,20,0));
+        JPanel bottom= new JPanel(new FlowLayout(FlowLayout.CENTER,20,0));
+        JComboBox<String> filtre_fluide=new JComboBox<>();
+        JComboBox<String> filtre_capteur=new JComboBox<>();
+        filtre_fluide.addItem("---Chosir le type fluide---");
+        filtre_fluide.addItem("EAU");
+        filtre_fluide.addItem("ELECTRICITE");
+        filtre_fluide.addItem("TEMPERATURE");
+        filtre_fluide.addItem("AIRCOMPRIME");
+        filtre_capteur.addItem("---Chosir le capteur---");
+        filtre_fluide.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(!filtre_fluide.getSelectedItem().equals("---Chosir le type fluide---")){
+                    try {
+                        ResultSet rst= d.getByFluide("capteur", (String)filtre_fluide.getSelectedItem());
+                        filtre_capteur.removeAllItems();
+                        filtre_capteur.addItem("---Chosir le capteur---");
+                        while(rst.next()) {
+                            filtre_capteur.addItem(rst.getString("NomC"));
+                        }
+                    } catch (SQLException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+                else {
+                    filtre_capteur.removeAllItems();
+                    filtre_capteur.addItem("---Chosir le capteur---");
+                }
+            }
+        });
+        
+        SqlDateModel model = new SqlDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Aujourd'hui");
+        p.put("text.month", "Mois");
+        p.put("text.year", "Année");
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+        
+        SqlDateModel model2 = new SqlDateModel();
+        JDatePanelImpl datePanel2 = new JDatePanelImpl(model2, p);
+        JDatePickerImpl datePicker2 = new JDatePickerImpl(datePanel2, new DateLabelFormatter());
+        
+        JPanel dateBegin=new JPanel(new FlowLayout(FlowLayout.CENTER,0,0));
+        dateBegin.add(new JLabel("Début"));
+        dateBegin.add(datePicker);
+        
+        JPanel dateEnd=new JPanel(new FlowLayout(FlowLayout.CENTER,0,0));
+        dateEnd.add(new JLabel("Fin"));
+        dateEnd.add(datePicker2);
+        
+        JButton plus =new JButton("Ajouter");
+        
+        plus.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                java.sql.Date selectedDateBegin = (java.sql.Date) datePicker.getModel().getValue();
+                java.sql.Date selectedDateEnd = (java.sql.Date) datePicker2.getModel().getValue();
+                if(selectedDateBegin!=null && selectedDateEnd!=null && !filtre_capteur.getSelectedItem().equals("---Chosir le capteur---") && nb<3) {
+                    query="SELECT * FROM valeur where Date>'"+selectedDateBegin.toString()+"' AND Date<'"+selectedDateEnd.toString()+"' AND NomC='"+filtre_capteur.getSelectedItem()+"'";
+                    System.out.println(query);
+                    try {
+                        ResultSet rst=d.executerRequete(query);
+                        String capteur=(String) filtre_capteur.getSelectedItem();
+                        XYSeries serie = new XYSeries(capteur);
+
+                        while(rst.next()) {
+                            Float value=rst.getFloat("Valeur");
+                            double sqlDate=rst.getTimestamp("Date").getTime();
+                            serie.add(sqlDate, value);
+                        }
+                        if(dataset.getSeriesIndex(serie.getKey())==-1) {
+                            dataset.addSeries(serie);
+                            chart=ChartFactory.createXYLineChart("","Date", "Value",dataset,PlotOrientation.VERTICAL, true, true, false);
+                            DateAxis xAxis = new DateAxis();
+                            chart.getXYPlot().setDomainAxis(xAxis);
+                            chartPanel.updateUI();
+                            chartPanel.revalidate();
+                            nb++;
+                        }
+                    } catch (SQLException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+            }
+            
+        });	
+        /*----------------------CHART----------------------------------*/	
+        header.add(filtre_fluide);
+        header.add(filtre_capteur);
+        header.add(dateBegin);
+        header.add(dateEnd);
+        header.add(plus);
+        DateAxis xAxis = new DateAxis();
+        chart.getXYPlot().setDomainAxis(xAxis);
+        chartPanel.setDomainZoomable(true);
+        chartPanel.setRangeZoomable(true);
+        chartPanel.setMouseZoomable(true);
+        
+        XYPlot plot = chart.getXYPlot();
+        XYLineAndShapeRenderer renderer =new XYLineAndShapeRenderer();
+        //renderer.setSeriesStroke(0, new BasicStroke(5.0f));
+        //renderer.setSeriesStroke(1, new BasicStroke(5.0f));
+        renderer.setBaseStroke(new BasicStroke(5.0f));
+        renderer.setAutoPopulateSeriesStroke(false);
+        plot.setRenderer(renderer);
+        
+        JButton reset=new JButton("Reset Chart");
+        reset.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dataset.removeAllSeries();
+                chartPanel.updateUI();
+                chartPanel.revalidate();
+                nb=0;
+            }
+        });
+        
+        bottom.add(reset);
+        this.add(header,BorderLayout.PAGE_START);
+        this.add(chartPanel,BorderLayout.CENTER);
+        this.add(bottom,BorderLayout.PAGE_END);
+    }
+    
+    public class DateLabelFormatter extends AbstractFormatter {
+        private static final long serialVersionUID = 1L;
+        private String datePattern = "yyyy-MM-dd";
+        private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            return dateFormatter.parseObject(text);
+        }
+
+        @Override
+        public String valueToString(Object value) throws ParseException {
+            if (value != null) {
+                Calendar cal = (Calendar) value;
+                return dateFormatter.format(cal.getTime());
+            }
+
+            return "";
+        }
+    }
+}</code></pre>    
+            </div>      
+        </li>
+    </ul>
+
+<h5>Affichage du JTree()</h5>
+<p>La aussi à l'aide des données stocker on fait un JTree() et on affiche les données en fonction du capteur choisie dans l'arborescence</p>
+<img  src="contenu/images/jtree.png"  class="responsive-img materialboxed">
+<ul class="collapsible">
+    <li>
+        <div class="collapsible-header">Show code</div>
+        <div class="collapsible-body"> 
+<pre><code class="language-java">/*Mise à jour du Jtree avec les données de la BDD Database.java*/
+public void miseAJourTree(DefaultMutableTreeNode racine) {
+    Statement stmt1;
+    Statement stmt2;
+    try {
+        connexionDatabase();
+        racine.removeAllChildren();
+        stmt1 = connection.createStatement();
+        stmt2 = connection.createStatement();
+        ResultSet rst = stmt1.executeQuery("SELECT DISTINCT(NomB) FROM capteur ORDER BY NomB");
+        while (rst.next()) {
+            String NomB = rst.getString("NomB");
+            DefaultMutableTreeNode batiment =new DefaultMutableTreeNode(NomB);
+            racine.add(batiment);
+            ResultSet rst2 = stmt2.executeQuery("SELECT DISTINCT(Etage) FROM capteur WHERE NomB='"+NomB+"' ORDER BY Etage");
+            while (rst2.next()) {
+                String Etage = String.valueOf(rst2.getInt("Etage"));
+                DefaultMutableTreeNode etage =new DefaultMutableTreeNode(Etage);
+                batiment.add(etage);
+                ResultSet rst3=getCapteur("capteur",rst2.getInt("Etage"),NomB);
+                while (rst3.next()) {
+                    etage.add(new DefaultMutableTreeNode(rst3.getString(1)));
+                }
+            }
+        }
+        rst.close();
+        stmt2.close();
+        stmt1.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+/* Création du JTree dans Gestion.java*/
+static DefaultMutableTreeNode root = new DefaultMutableTreeNode("Université Paul Sabatier");
+d.miseAJourTree(root);
+public static JTree tree = new JTree(root);
+
+/*Remplisage des JLabel apres choix du capteur Gestion.java*/
+public Capteur FillInfo(String NomC){
+    ResultSet rs =d.getInfoCapteur(NomC);
+    Capteur c = null;
+    try {
+        while (rs.next()) {
+                nomC.setText(rs.getString(1)); 
+                NomB.setText(rs.getString(2));
+                Etage.setText(rs.getString(3));
+                TypeC.setText(rs.getString(4));
+                Lieu.setText(rs.getString(5));
+                seuilMax.setText(rs.getString(7));
+                seuilMin.setText(rs.getString(6));
+                
+                if (Integer.valueOf(rs.getString(8)) == 0) {
+                    Active.setText("Desactive");
+                }else {
+                    Active.setText("Active");
+                }
+                ResultSet rs1 = d.getSeuilBase((rs.getString(4)));
+                while (rs1.next()) {
+                    Unite.setText(rs1.getString(4));				
+            }
+                c = new Capteur(rs.getString(1), rs.getString(4), rs.getString(2), rs.getString(3), rs.getString(5), Boolean.valueOf(rs.getString(8)));
+            
+        }
+    }catch (SQLException e) {
+        // TODO: handle exception
+    }
+    return c;
+}</code></pre>
+        </div>      
+    </li>
+</ul>
+
+</section>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="contenu/images/bck1.jpg" alt="Photo de Karolina Grabowska provenant de Pexels" class="responsive-img">
+        </div>
+    </div>
+
+    <section id="conclusion" class="section container scrollspy">
+        <h1>Conclusion</h1>
+        
+        
+    </section>
+
+    <footer class="page-footer">
+        <div class="">
+          <div class="container">
+            © 2020 Copyright 
+            <a class="grey-text text-lighten-3 right p5" href="https://github.com/supersieu">Dang</a> 
+            <a class="grey-text text-lighten-3 right p5" href="https://github.com/stanBPS">Stanley</a>
+          </div>
+        </div>
+      </footer>
+
+    <!-- minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- DATATABLE JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+    <!--Prism JS-->
+    <script src="js/prism.js"></script> 
+    <!-- Local JS File -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

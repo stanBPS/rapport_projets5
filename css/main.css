@@ -1,0 +1,13 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+h1,h3 {
+    text-align: center;
+}
+h6{
+    text-decoration: underline;
+}
+.section{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
