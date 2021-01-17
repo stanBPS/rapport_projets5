@@ -29,3 +29,16 @@ img{
     display: block;
     margin: auto;
 }
+em{
+    text-decoration: underline;
+}
+.parallax{
+    opacity: 0.5;
+}
+
+nav{
+    background-color:#1565c0!important;
+}
+.page-footer{
+    background-color:#1565c0!important;
+}
