@@ -32,6 +32,7 @@
                             <li><a href="#analyse">Analyse et Conception</a></li>
                             <li><a href="#realisation">Réalisation</a></li>
                             <li><a href="#conclusion">Conclusion</a></li>
+                            <li><a href="#installation">Utilisation</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,6 +44,7 @@
             <li><a href="#analyse">Analyse et Conception</a></li>
             <li><a href="#realisation">Réalisation</a></li>
             <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#installation">Utilisation</a></li>
         </ul>
     </header>
 
@@ -259,6 +261,7 @@
 
     <section id="analyse" class="section container scrollspy">
        <h1>Analyse et Conception</h1>
+       <h4>Analyse</h4>
        <h5>Travail réalisé</h5>
        <p>
            Ce projet projet nous a permit de mettre en pratique les enseignements du semestre:
@@ -271,6 +274,7 @@
            <br>Avec ce projet on a du organiser notre temps, en fonction d'un cahier des charges précis. Pour la mise en place en place du projet on a travaillé ensemble puis un partage des tâche équitable 
            pour la partie implémentation.
        </p>
+       <h4>Conception</h4>
        <h5>Base de données</h5>
        <h6>MLD</h6>
        <p>Aprés plusieurs test nous avons validé le MLD suivant: </p>
@@ -717,7 +721,7 @@ COMMIT;</code></pre>
     </ul>
 
     <h5>Affichage des capteur live</h5>
-    <p>On nous a fournis un fichier <a href="" download="">capteur.jar</a> pour simuler la reception des données d'un capteur via un serveur, à l'aide de la classe Capteur en
+    <p>On nous a fournis un fichier capteur.jar pour simuler la reception des données d'un capteur via un serveur, à l'aide de la classe Capteur en
     on crée une liste de capteur qui nous permettra par la suite de les affcher dans la JTable() et avec la fonction fireTableDataChanged() on met à jour la table à chaque nouvelle valeur reçu</p>
     <p>Aprés création d'un nouveau serveur on utilise cette méthode pour récuperer les données.</p>
     <img  src="contenu/images/jtable.png"  class="responsive-img materialboxed">
@@ -1115,16 +1119,78 @@ public Capteur FillInfo(String NomC){
         <h5>Autre outils et langages utilisés</h5>
         <ul class="browser-default">
             <li><b>HTML/CSS/JQuery</b>: Création du rapport</li>
-            <li><a href="" target="_blank"><b>MaterializeCSS</b></a>: Mise en page du rapport</li>
+            <li><a href="https://materializecss.com/getting-started.html" target="_blank"><b>MaterializeCSS</b></a>: Mise en page du rapport</li>
             <li><b>Paint</b>: Manipulation d'images</li>
-            <li><a href="" target="_blank"><b>GitHub pages</b></a>: Hebergement du rapport</li>
+            <li><a href="https://pages.github.com/" target="_blank"><b>GitHub pages</b></a>: Hebergement du rapport</li>
         </ul>
+    </section>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="contenu/images/bck1.jpg" alt="Photo de Karolina Grabowska provenant de Pexels" class="responsive-img">
+        </div>
+    </div>
+
+    <section id="installation" class="section container scrollspy">
+        <h1>Utilisation</h1>
+        <h5>Pour utiliser l'application en local</h5>
+        <h6>Pre-requis</h6>
+            <p class="marge">- Installer un IDE pour Java (recommandation <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a>)</p>
+            <p class="marge">- Installer <a href="https://www.wampserver.com/" target="_blank">WampServer</a> </p>
+            <p class="marge">- Fichier <a href="/contenu/download/ProjetS5.zip" download>.zip</a> du projet</p>
+        <h6>Installation de la base de données</h6>
+        <ol class="browser-default">
+            <li>lancez WampServer quand le logo est vert dans la barre de tâche se rendre sur un navigateur et entrer http://localhost/</li>
+            <li>Ouvrez phpMyAdmin (dans la partie outils).(login par defaut: root/mot de passe: )</li>
+            <li>Créer une nouvelle base (recommandation nom bdd_projets5)</li>
+            <li>Cliquez sur le nom de la base de données(bdd_projets5) qui recevra les informations importées. La page se rafraîchira pour afficher les informations relatives à la base de données sélectionnée.</li>
+            <li>Cliquez sur l’onglet « Importer ».</li>
+            <li>Cliquez sur le bouton « choisir un fichier » de la section « Fichier à importer » .</li>
+            <li>Votre navigateur vous invitera à repérer sur votre ordinateur le fichier (Code_source/BDD/bdd_projets5_with_data.sql ou bdd_projets5_without_data.sql) de la base de données.</li>
+            <li>Une fois le fichier repéré et sélectionné. Cliquez sur le bouton « Exécuter ».</li>
+        </ol>
+        <p>P.S: Si vous avez un autre login ou mot de passe vous pouvez le changer dans le fichier "conf.properties"</p>
+        <br>
+        <h6>Lancement de l'application avec les .jar</h6>
+        <ol class="browser-default">
+            <li>Lancer ProjetS5.jar (dans le dossier Executable)</li>
+            <li>Choisir un numero de port( par defaut:8952)</li>
+            <li>Lancer capteur.jar (dans le dossier Executable)</li>
+            <li>Choisir un numero de port( par defaut:8952)</li>
+            <li>Dans l'application capteur.jar, ajouter un ou des capteur à l'aide du menu (un fichier capteur.csv (dans le dossier Executable) vous est fournie avec des capteurs déjà enregistré)</li>
+        </ol>
+        <p>Une fois les differzentes étapes remplies, vous pouvez maintenant utiliser l'application projetS5.jar et Capteur.jar.</p>
+        <br>
+        <h6>Lancement avec Eclipse</h6>
+        <ol class="browser-default">
+            <li>Importer le projet dans Eclipse 
+                <ul class="browser-default">
+                    <li>Ouvrir Eclipse</li>
+                    <li>Clique droit à gauche dans la partie "Package Explorer". Cliquez sur "import"</li>
+                    <li>Dans "General", Selectionner "Projects from Folder or Archive". Cliquez sur le bouton "next" </li>
+                    <li>Cliquez sur le bouton "Directory..."</li>
+                    <li>Eclipse vous invitera à repérer sur votre ordinateur le dossier (ProjetS5 par exemple qui est dans le dossier Code_source/JAVA fichier .zip) pour le projet.</li>
+                    <li>Cliquez sur le bouton "Finish"</li>
+                </ul>
+            </li>
+            <li>Executer l'application
+                <ul class="browser-default">
+                    <li>Dans le fichier src puis dans le package se trouve AppMain.java, Clique droit sur le fichier et selectionner  "Run As" -> "java application"</li>
+                    <li>Choisir un numero de port( par defaut:8952)</li>
+                    <li>Lancer capteur.jar</li>
+                    <li>Choisir un numero de port( par defaut:8952)</li>
+                    <li>Dans l'application capteur.jar, ajouter un ou des capteur à l'aide du menu (un fichier capteur.csv vous est fournie avec des capteurs déjà enregistré)</li>
+                </ul>
+            </li>
+        </ol>
+        <p>Une fois les differzentes étapes remplies, vous pouvez maintenant utiliser l'application et Capteur.jar.</p>
     </section>
 
     <footer class="page-footer">
         <div class="">
           <div class="container">
-            © 2020 Copyright 
+            © 2021 Copyright 
             <a class="grey-text text-lighten-3 right p5" href="https://github.com/supersieu">Dang</a> 
             <a class="grey-text text-lighten-3 right p5" href="https://github.com/stanBPS">Stanley</a>
           </div>

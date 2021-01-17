@@ -12,7 +12,7 @@ h3{
 }
 h4{
     color: #0582CA;
-    padding-top: 4vw;
+    padding-top: 2vw;
 }
 h5{
     color: #003554;
@@ -58,4 +58,7 @@ nav{
 }
 .marge {
     margin-left: 5em;
+}
+.p5{
+    padding-right: 15px!important;
 }
