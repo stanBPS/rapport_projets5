@@ -144,7 +144,7 @@
         <p>
             <em>Message pour la connexion d’un capteur</em>
             <p>Ce message sera au format suivant : <span class="red-text"><b>Connexion</b> nom_du_capteur description_du_capteur</span></p>
-            <p>Avec description_du_capteur au format suivant : <span class="red-text">type:batiment:etage:lieu</span> et :</p>
+            <p>Avec <b>description_du_capteur</b> au format suivant : <span class="red-text">type:batiment:etage:lieu</span> et :</p>
             <ul class="browser-default">
                 <li><b>type</b> est le type de fluide géré par le capteur en question (les valeurs possibles pour le
                     type sont EAU, ELECTRICITE, AIRCOMPRIME, TEMPERATURE) ;
@@ -156,20 +156,20 @@
                     capteur à l’étage.</li>
             </ul>
             <b>Exemple de message</b>
-            <p>Connexion Capteur1_03 ELECTRICITE:U1:1:DevantSalle202</p>
+            <p class="marge">Connexion Capteur1_03 ELECTRICITE:U1:1:DevantSalle202</p>
         </p>
         <p>
             <em>Message pour l’envoi de la valeur d’un capteur</em>
             <p>Ce message sera au format suivant : <span class="red-text">Donnee nom_du_capteur valeur_du_capteur</span></p>
             <p>Où valeur_du_capteur est une valeur sous la forme d’un réel.</p>
             <b>Exemple de message</b>
-            <p>Donnee Capteur1_03 3.33652</p>
+            <p class="marge">Donnee Capteur1_03 3.33652</p>
         </p>
         <p>
             <em>Message pour la déconnexion d’un capteur</em>
             <p>Ce message sera au format suivant : <span class="red-text">Deconnexion nom_du_capteur</span></p>
             <b>Exemple de message</b>
-            <p>Deconnexion Capteur1_03</p>
+            <p class="marge">Deconnexion Capteur1_03</p>
         </p>
         <h6>Stockage de données</h6>
         <p>

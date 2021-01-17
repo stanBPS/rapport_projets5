@@ -4,8 +4,22 @@
 h1,h3 {
     text-align: center;
 }
+h1{ 
+    color: #004D74;
+}
+h3{
+    color: #00A6FB;
+}
+h4{
+    color: #0582CA;
+    padding-top: 4vw;
+}
+h5{
+    color: #003554;
+}
 h6{
     text-decoration: underline;
+    color: #004164;
 }
 .section{
     padding-top: 4vw;
@@ -41,4 +55,7 @@ nav{
 }
 .page-footer{
     background-color:#1565c0!important;
+}
+.marge {
+    margin-left: 5em;
 }
