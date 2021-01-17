@@ -50,6 +50,7 @@
         <h1>Licence Informatique <br>Projet S5</h1> 
         <h3>Tableau de bord pour la visualisation <br>
             des données de consommation énergétique</h3>
+            <img src="contenu/images/UPS.png"  class="responsive-img">
 
     </section>
     <<!--img style="display: block; margin: auto;" src="contenu/images/2.png"  class="responsive-img">-->
@@ -208,7 +209,7 @@
                     affichées sur la droite du panneau. Les informations à afficher sont le nom du capteur, le type
                     de fluide, les informations sur la localisation du capteur, et la valeur de ses seuils. 
                 </p>
-                <table>
+                <table class="striped">
                     <thead>
                         <tr>
                             <th>Fluide</th>
@@ -367,9 +368,9 @@
         
         <h4>Implémentation base de données</h4>
         Création de la base de données <a href="/contenu/download/bdd_projets5.sql" download>bdd_projets5.sql</a>
-        <ul class="collapsible">
+        <ul class="collapsible popout" >
             <li>
-                <div class="collapsible-header">Show code</div>
+                <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
                 <div class="collapsible-body">
 <pre><code class="language-sql">-- Nom de la Base de données : `bdd_projets5`
 DROP TABLE IF EXISTS `capteur`;
@@ -437,7 +438,7 @@ COMMIT;</code></pre>
             </div>
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header">Show code</div>
+                    <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
 <div class="collapsible-body"> 
     <pre><code class="language-java">public class NavBar extends JPanel{
         private static final long serialVersionUID = 1L;
@@ -495,7 +496,7 @@ COMMIT;</code></pre>
         </div>  
         <ul class="collapsible">
             <li>
-                <div class="collapsible-header">Show code</div>
+                <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
                 <div class="collapsible-body">  
 <pre><code class="language-java">public class Live extends JPanel{
     private static final long serialVersionUID = 1L;
@@ -521,7 +522,7 @@ COMMIT;</code></pre>
 
         <div class="row">
             <div class="col s6">
-                <img src="contenu/images/2.png"  class="responsive-img materialboxed">
+                <img src="contenu/images/2_1.png"  class="responsive-img materialboxed">
             </div>
             <div class="col s6">
                 <img  src="contenu/images/2.png"  class="responsive-img materialboxed">
@@ -529,7 +530,7 @@ COMMIT;</code></pre>
         </div> 
         <ul class="collapsible">
             <li>
-                <div class="collapsible-header">Show code</div>
+                <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
                 <div class="collapsible-body"> 
 <pre><code class="language-java">public class Chart extends JPanel{
     private static final long serialVersionUID = 1L;
@@ -563,7 +564,7 @@ COMMIT;</code></pre>
         </div> 
         <ul class="collapsible">
             <li>
-                <div class="collapsible-header">Show code</div>
+                <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
                 <div class="collapsible-body"> 
 <pre><code class="language-java">public class Tree extends JPanel{
     private static final long serialVersionUID = 1L;
@@ -593,7 +594,7 @@ COMMIT;</code></pre>
     <p>On a créé une classe Capteur de maniere a facilité la récupération des données depuis la BDD, le Serveur et l'affichage par la suite dans la JTable() grace à AbstractTableModel</p>
     <ul class="collapsible">
         <li>
-            <div class="collapsible-header">Show code</div>
+            <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
             <div class="collapsible-body">  
 <pre><code class="language-java">public class Capteur {
     private String nom;
@@ -722,7 +723,7 @@ COMMIT;</code></pre>
     <img  src="contenu/images/jtable.png"  class="responsive-img materialboxed">
     <ul class="collapsible">
         <li>
-            <div class="collapsible-header">Show code</div>
+            <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
             <div class="collapsible-body">  
 <pre><code class="language-java">public void handleInput(String input) {
     if (input.contains("Connexion")) {
@@ -772,7 +773,7 @@ COMMIT;</code></pre>
     <img  src="contenu/images/Jfreechart.png"  class="responsive-img materialboxed">
     <ul class="collapsible">
         <li>
-            <div class="collapsible-header">Show code</div>
+            <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
             <div class="collapsible-body"> 
 <pre><code class="language-java">public class Graph extends JPanel{
     private static final long serialVersionUID = 1L;
@@ -945,7 +946,7 @@ COMMIT;</code></pre>
 <img  src="contenu/images/jtree.png"  class="responsive-img materialboxed">
 <ul class="collapsible">
     <li>
-        <div class="collapsible-header">Show code</div>
+        <div style="display: block;" class="collapsible-header">Montrer le code<i class="material-icons right">expand_more</i></div>
         <div class="collapsible-body"> 
 <pre><code class="language-java">/*Mise à jour du Jtree avec les données de la BDD Database.java*/
 public void miseAJourTree(DefaultMutableTreeNode racine) {
@@ -1031,8 +1032,94 @@ public Capteur FillInfo(String NomC){
 
     <section id="conclusion" class="section container scrollspy">
         <h1>Conclusion</h1>
-        
-        
+        <h5>Partage des tâches</h5>
+        <table class="highlight">
+            <thead>
+                <th >Tâche</th>
+                <th class="check">Dang</th>
+                <th class="check">Stanley</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maquette</td>
+                    <td class="check"></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>Création de la base de données</td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>UML/Classes</td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>Implémentation interface</td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>Panneau de visualisation « temps réel »</td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>Panneau d’analyse a posteriori</td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                    <td class="check"></td>
+                </tr>
+                <tr>
+                    <td>Panneau de gestion des capteurs</td>
+                    <td class="check"></td>
+                    <td class="check"><i class="material-icons">close</i></td>
+                </tr>
+                <tr>
+                    <td>Executable</td>
+                    <td class="check"></td>
+                    <td class="check"></td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Livrables</h5>
+        <table class="highlight">
+            <thead>
+                <th>Tâche</th>
+                <th class="check">Livrable</th>
+                <th class="check">Non-Livrable</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Panneau de visualisation « temps réel »</td>
+                    <td class="check"><i class="material-icons">check</i></td>
+                    <td class="check"></td>
+                </tr>
+                <tr>
+                    <td>Panneau d’analyse a posteriori</td>
+                    <td class="check"><i class="material-icons">check</i></td>
+                    <td class="check"></td>
+                </tr>
+                <tr>
+                    <td>Panneau de gestion des capteurs</td>
+                    <td class="check"><i class="material-icons">check</i></td>
+                    <td class="check"></td>
+                </tr>
+                <tr>
+                    <td>Executable</td>
+                    <td class="check"></td>
+                    <td class="check"><i class="material-icons">check</i></td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Autre outils et langages utilisés</h5>
+        <ul class="browser-default">
+            <li>HTML/CSS/JQuery</li>
+            <li>MaterializeCSS</li>
+            <li>Paint</li>
+            <li>GitHub pages</li>
+            <li></li>
+        </ul>
     </section>
 
     <footer class="page-footer">

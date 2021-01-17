@@ -11,3 +11,21 @@ h6{
     padding-top: 4vw;
     padding-bottom: 4vw;
 }
+.check{
+    text-align: center!important;
+}
+
+.collapsible li.active i {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+  
+.collapsible li i {
+transition: .1s all linear;
+}
+
+img{
+    display: block;
+    margin: auto;
+}
